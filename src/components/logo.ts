@@ -13,7 +13,7 @@ class Logo {
     console.log(
       chalk.blueBright(
         figlet.textSync(
-          'Weather', { horizontalLayout: 'fitted' }
+          this.name, { horizontalLayout: 'fitted' }
         )
       )
     );
