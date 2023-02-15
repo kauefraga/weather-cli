@@ -1,12 +1,12 @@
 {
   "name": "weather-cli",
   "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:kauefraga/weather-cli.git",
-  "author": "kauefraga <kauefragarodrigues456@gmail.com>",
+  "repository": "https://github.com/kauefraga/weather-cli.git",
+  "author": "Kauê Fraga Rodrigues <kauefragarodrigues456@gmail.com>",
   "license": "MIT",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node .",
     "dev": "tsnd --respawn --transpile-only src/index.ts"
   },
   "devDependencies": {
