@@ -1,23 +1,12 @@
 import chalk from 'chalk';
 import figlet from 'figlet';
 
-
-class Logo {
-  constructor (
-    public name: string
-  ) {
-    this.name = name;
-  }
-
-  showIt() {
-    console.log(
-      chalk.blueBright(
-        figlet.textSync(
-          this.name, { horizontalLayout: 'fitted' }
-        )
+export function showLogo(name: string) {
+  return console.log(
+    chalk.blueBright(
+      figlet.textSync(
+        name, { horizontalLayout: 'fitted' }
       )
-    );
-  }
+    )
+  );
 }
-
-export default Logo;
