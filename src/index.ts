@@ -2,14 +2,12 @@ import { clear } from 'node:console';
 import { prompt } from 'enquirer';
 
 import { getWeather } from './services/get-weather';
-import Logo from './components/logo';
-import Answer from './components/answer';
-
-const logo = new Logo('Weather');
+import { showLogo } from './components/logo';
+import { showApiResult } from './components/answer';
 
 export async function main() {
   clear()
-  logo.showIt();
+  showLogo('Weather');
 
   const userAnswer = await prompt({
     type: 'input',
@@ -26,14 +24,11 @@ export async function main() {
     return JSON.stringify(answer);
   });
 
-  const [key, value] = userAnswer.split(':');
-  const location = value.replace(/["}]/g, '');
+  const { location } = JSON.parse(userAnswer)
 
   const data = await getWeather(location);
 
-  const answer = new Answer(data);
-
-  answer.showJson();
+  showApiResult(data);
 }
 
 main()
