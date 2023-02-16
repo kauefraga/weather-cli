@@ -1,13 +1,13 @@
 import { clear } from 'node:console';
 import { prompt } from 'enquirer';
 
-import getWeather from './services/getWeather';
+import { getWeather } from './services/get-weather';
 import Logo from './components/logo';
 import Answer from './components/answer';
 
 const logo = new Logo('Weather');
 
-async function init() {
+export async function main() {
   clear()
   logo.showIt();
 
@@ -36,4 +36,4 @@ async function init() {
   answer.showJson();
 }
 
-init()
+main()
